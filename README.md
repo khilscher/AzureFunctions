@@ -1,0 +1,2 @@
+# AzureFunctions
+Sample Azure Functions
