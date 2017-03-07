@@ -1,0 +1,12 @@
+{
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "myEventHubMessage",
+      "direction": "in",
+      "path": "<EventHub Compatible Name>",
+      "connection": "MyIoTHub"
+    }
+  ],
+  "disabled": false
+}
