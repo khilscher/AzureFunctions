@@ -7,6 +7,18 @@
             "metadata": {
                 "description": "The name of the function app that you wish to create."
             }
+        },
+        "eventHubName": {
+            "type": "string",
+            "metadata": {
+                "description": "Event Hub Compatible Name"
+            }
+        },
+        "iotHubConnString": {
+            "type": "string",
+            "metadata": {
+                "description": "IoT Hub Connection String"
+            }
         }
     },
   "variables": {
@@ -74,6 +86,14 @@
                         {
                             "name": "WEBSITE_NODE_DEFAULT_VERSION",
                             "value": "6.5.0"
+                        },
+                        {
+                            "name": "EVENTHUBCOMPATNAME",
+                            "value": "[variables('eventHubName')]"
+                        },
+                        {
+                            "name": "IOT_HUB_CONNECTION_STRING",
+                            "value": "[variables('iotHubConnString')]"
                         }
                     ]
                 }
