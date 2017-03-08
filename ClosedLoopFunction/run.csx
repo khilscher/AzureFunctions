@@ -2,20 +2,19 @@ using System;
 using Microsoft.Azure.Devices;
 using System.Text;
 
-static ServiceClient serviceClient;
-
-//Add IoT Hub Connection String
-private const string IOT_HUB_CONNECTION_STRING = "";
-
-public static async Task<string> Run(string myEventHubMessage, TraceWriter log)
+public static async Task<string> Run(string myIoTHubMessage, TraceWriter log)
 {
-    log.Info($"C# Event Hub trigger function processed a message: {myEventHubMessage}");
+    log.Info($"C# Event Hub trigger function processed a message: {myIoTHubMessage}");
+    
+    private const string iotHubConnString = GetEnvironmentVariable("IOT_HUB_CONNECTION_STRING");
+    
+    static ServiceClient serviceClient;
 
-    serviceClient = serviceClient ?? ServiceClient.CreateFromConnectionString(IOT_HUB_CONNECTION_STRING);
+    serviceClient = serviceClient ?? ServiceClient.CreateFromConnectionString(iotHubConnString);
 
     DeviceData deviceData = new DeviceData();
 
-    deviceData= Newtonsoft.Json.JsonConvert.DeserializeObject<DeviceData>(myEventHubMessage);
+    deviceData= Newtonsoft.Json.JsonConvert.DeserializeObject<DeviceData>(myIoTHubMessage);
 
     int sumtotal = deviceData.DataPoint1 + deviceData.DataPoint2;
 
