@@ -5,7 +5,7 @@
       "name": "myEventHubMessage",
       "direction": "in",
       "path": "%EVENTHUBCOMPATNAME%",
-      "connection": "MyIoTHub"
+      "connection": "EVENTHUB_ENDPOINT"
     }
   ],
   "disabled": false
