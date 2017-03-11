@@ -97,7 +97,7 @@
                             "value": "6.5.0"
                         },
                         {
-                            "name": "EVENTHUBCOMPATNAME",
+                            "name": "EVENTHUB_COMPAT_NAME",
                             "value": "[variables('eventHubName')]"
                         },
                         {
