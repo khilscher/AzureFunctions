@@ -5,12 +5,12 @@ The ClosedLoop function binds to the Event Hub compatible name of an IoT Hub. Ea
 
 The device should send the following payload to IoT Hub:
 ```
-    private class DeviceData
-    {
-        public string DeviceId { get; set; }
-        public int DataPoint1 { get; set; }
-        public int DataPoint2 { get; set; }
-    }
+private class DeviceData
+{
+    public string DeviceId { get; set; }
+    public int DataPoint1 { get; set; }
+    public int DataPoint2 { get; set; }
+}
 ```
 
 You will be prompted for the following settings:
