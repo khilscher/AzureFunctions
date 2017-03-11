@@ -33,7 +33,7 @@
     "repoURL": "https://github.com/khilscher/AzureFunctions.git",
     "branch": "master",
     "eventHubName": "[parameters('eventHubName')]",
-    "eventHubEndPoint": "[parameters('eventHubName')]",
+    "eventHubEndPoint": "[parameters('eventHubEndPoint')]",
     "iotHubConnString": "[parameters('iotHubConnString')]",
     "storageAccountName": "[concat('storage', uniquestring(resourceGroup().id))]",
     "storageAccountid": "[concat(resourceGroup().id,'/providers/','Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]"
