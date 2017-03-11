@@ -14,6 +14,12 @@
                 "description": "Event Hub Compatible Name"
             }
         },
+        "eventHubEndPoint": {
+            "type": "string",
+            "metadata": {
+                "description": "Event Hub Endpoint e.g. Endpoint=sb://blah.servicebus.windows.net/...."
+            }
+        },
         "iotHubConnString": {
             "type": "string",
             "metadata": {
@@ -27,6 +33,7 @@
     "repoURL": "https://github.com/khilscher/AzureFunctions.git",
     "branch": "master",
     "eventHubName": "[parameters('eventHubName')]",
+    "eventHubEndPoint": "[parameters('eventHubName')]",
     "iotHubConnString": "[parameters('iotHubConnString')]",
     "storageAccountName": "[concat('storage', uniquestring(resourceGroup().id))]",
     "storageAccountid": "[concat(resourceGroup().id,'/providers/','Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]"
@@ -92,6 +99,10 @@
                         {
                             "name": "EVENTHUBCOMPATNAME",
                             "value": "[variables('eventHubName')]"
+                        },
+                        {
+                            "name": "EVENTHUB_ENDPOINT",
+                            "value": "[variables('eventHubEndPoint')]"
                         },
                         {
                             "name": "IOT_HUB_CONNECTION_STRING",
