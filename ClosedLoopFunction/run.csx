@@ -31,3 +31,9 @@ private class DeviceData
     public int DataPoint1 {get; set;}
     public int DataPoint2 {get; set;}
 }
+
+public static string GetEnvironmentVariable(string name)
+{
+    return name + ": " + 
+        System.Environment.GetEnvironmentVariable(name, EnvironmentVariableTarget.Process);
+}
