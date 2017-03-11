@@ -11,19 +11,19 @@
         "eventHubName": {
             "type": "string",
             "metadata": {
-                "description": "Event Hub Compatible Name"
+                "description": "The Event Hub Compatible Name of your IoT Hub. Find this under IoT Hub -> Endpoints -> Events."
             }
         },
         "eventHubEndPoint": {
             "type": "string",
             "metadata": {
-                "description": "Event Hub Endpoint e.g. Endpoint=sb://blah.servicebus.windows.net/...."
+                "description": "Event Hub Endpoint e.g. Endpoint=sb://blah.servicebus.windows.net/;SharedAccessKeyName..."
             }
         },
         "iotHubConnString": {
             "type": "string",
             "metadata": {
-                "description": "IoT Hub Connection String"
+                "description": "IoT Hub Connection String. Find this under IoT Hub -> Shared access policies. e.g. HostName=blah.azure-devices.net;SharedAccessKeyName..."
             }
         }
     },
@@ -97,7 +97,7 @@
                             "value": "6.5.0"
                         },
                         {
-                            "name": "EVENTHUB_COMPAT_NAME",
+                            "name": "EVENTHUBCOMPATNAME",
                             "value": "[variables('eventHubName')]"
                         },
                         {
