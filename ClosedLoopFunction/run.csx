@@ -9,7 +9,7 @@ public static async Task<string> Run(string myEventHubMessage, TraceWriter log)
 {
     log.Info($"C# Event Hub trigger function processed a message: {myEventHubMessage}");
     
-    serviceClient = serviceClient ?? ServiceClient.CreateFromConnectionString(iotHubConnString);
+    serviceClient = serviceClient ?? ServiceClient.CreateFromConnectionString("HostName=tempHubKh1.azure-devices.net;SharedAccessKeyName=iothubowner;SharedAccessKey=OvZjjTSVaZOU2OlGYQovfp2C0Keudb5rmZFxJEZyyFI=");
 
     DeviceData deviceData = new DeviceData();
 
