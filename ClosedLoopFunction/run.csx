@@ -1,5 +1,6 @@
 using System;
 using Microsoft.Azure.Devices;
+using Microsoft.Azure.Devices.Shared;
 using System.Text;
 
 static ServiceClient serviceClient;
