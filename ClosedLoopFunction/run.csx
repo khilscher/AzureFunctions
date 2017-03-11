@@ -3,8 +3,7 @@ using Microsoft.Azure.Devices;
 using System.Text;
 
 static ServiceClient serviceClient;
-private const string iotHubConnString = GetEnvironmentVariable("IOT_HUB_CONNECTION_STRING");
-
+static string iotHubConnString = GetEnvironmentVariable("IOT_HUB_CONNECTION_STRING");
 
 public static async Task<string> Run(string myIoTHubMessage, TraceWriter log)
 {
