@@ -17,7 +17,7 @@ You will be prompted for the following settings:
 - App Name - The name of your function. 
 - Event Hub Compatible Name - Find this under IoT Hub -> Endpoints -> Events
 - IoT Hub Conn String - Find this under IoT Hub -> Shared access policies. The policy needs at least ```Service connect``` permission, such as ```iothubowner```.
-- Event Hub Endpoint - Find this under IoT Hub -> Endpoints -> Events. It will look like ```sb://iothub-ns-temphubkh1-126055-c0205f05d8.servicebus.windows.net/```. Now reformat this as follows:
+- Event Hub Endpoint - Find this under IoT Hub -> Endpoints -> Events. It will look like ```sb://somename.servicebus.windows.net/```. Now reformat this as follows:
   - Prepend ```Endpoint=``` and append the same ```SharedAccessKeyName``` and ```SharedAccessKey``` from the IoT Hub Conn String. 
   - The final product should look something like ```Endpoint=sb://somename.servicebus.windows.net/;SharedAccessKeyName=iothubowner;SharedAccessKey=1H8jjTSVaZOU2OlGYQovfp2C0Keudb5rmZFxJEZyyFp=```
 
