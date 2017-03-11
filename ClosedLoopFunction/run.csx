@@ -9,8 +9,6 @@ public static async Task<string> Run(string myEventHubMessage, TraceWriter log)
 {
     log.Info($"C# Event Hub trigger function processed a message: {myEventHubMessage}");
     
-    log.Info($"IoT Hub Conn String: {iotHubConnString}");
-    
     serviceClient = serviceClient ?? ServiceClient.CreateFromConnectionString(iotHubConnString);
 
     DeviceData deviceData = new DeviceData();
