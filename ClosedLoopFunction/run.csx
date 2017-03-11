@@ -5,21 +5,28 @@ using System.Text;
 static ServiceClient serviceClient;
 static string iotHubConnString = GetEnvironmentVariable("IOT_HUB_CONNECTION_STRING");
 
-public static async Task<string> Run(string myIoTHubMessage, TraceWriter log)
+public static async Task<string> Run(string myEventHubMessage, TraceWriter log)
 {
-    log.Info($"C# Event Hub trigger function processed a message: {myIoTHubMessage}");
+    log.Info($"C# Event Hub trigger function processed a message: {myEventHubMessage}");
     
     serviceClient = serviceClient ?? ServiceClient.CreateFromConnectionString(iotHubConnString);
 
     DeviceData deviceData = new DeviceData();
 
-    deviceData= Newtonsoft.Json.JsonConvert.DeserializeObject<DeviceData>(myIoTHubMessage);
+    deviceData = Newtonsoft.Json.JsonConvert.DeserializeObject<DeviceData>(myIoTHubMessage);
+    
+    log.Info("Message details...");
+    log.Info($"DeviceId: {deviceData.DeviceId}");
+    log.Info($"DataPoint1: {deviceData.DataPoint1}");
+    log.Info($"DataPoint2: {deviceData.DataPoint2}");
 
     int sumtotal = deviceData.DataPoint1 + deviceData.DataPoint2;
 
     var responseMessage = new Message(Encoding.ASCII.GetBytes(sumtotal.ToString()));
 
     await serviceClient.SendAsync(deviceData.DeviceId, responseMessage);
+    
+    log.Info($"Response message sent to: {deviceData.DeviceId}");
 
     return null;
 }
