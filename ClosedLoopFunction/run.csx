@@ -2,13 +2,12 @@ using System;
 using Microsoft.Azure.Devices;
 using System.Text;
 
+private const string iotHubConnString = GetEnvironmentVariable("IOT_HUB_CONNECTION_STRING");
+static ServiceClient serviceClient;
+
 public static async Task<string> Run(string myIoTHubMessage, TraceWriter log)
 {
     log.Info($"C# Event Hub trigger function processed a message: {myIoTHubMessage}");
-    
-    private const string iotHubConnString = GetEnvironmentVariable("IOT_HUB_CONNECTION_STRING");
-    
-    static ServiceClient serviceClient;
 
     serviceClient = serviceClient ?? ServiceClient.CreateFromConnectionString(iotHubConnString);
 
