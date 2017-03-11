@@ -13,7 +13,7 @@ public static async Task<string> Run(string myEventHubMessage, TraceWriter log)
 
     DeviceData deviceData = new DeviceData();
 
-    deviceData = Newtonsoft.Json.JsonConvert.DeserializeObject<DeviceData>(myIoTHubMessage);
+    deviceData = Newtonsoft.Json.JsonConvert.DeserializeObject<DeviceData>(myEventHubMessage);
     
     log.Info("Message details...");
     log.Info($"DeviceId: {deviceData.DeviceId}");
